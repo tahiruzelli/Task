@@ -3,7 +3,6 @@ import 'package:flutter/rendering.dart';
 
 import 'MainPage.dart';
 
-// ignore: camel_case_types
 class New_main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -117,7 +116,7 @@ _middlemenu(double screenHeight, double screenWidth, context) {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 13, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.127, vertical: 15),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
@@ -139,17 +138,20 @@ _middlemenu(double screenHeight, double screenWidth, context) {
                 ],
               ),
             ),
-            Container(
-              height: screenHeight * 0.48,
-              child: ListView.builder(
-                  itemCount: 20,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      leading: Icon(Icons.check_circle_outline),
-                      title: Text("Batuhan Erkan"),
-                      subtitle: Text("07.12.1999-24.08.2020"),
-                    );
-                  }),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal:  MediaQuery.of(context).size.width * 0.096),
+              child: Container(
+                height: screenHeight * 0.48,
+                child: ListView.builder(
+                    itemCount: 20,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        leading: Icon(Icons.check_circle_outline),
+                        title: Text("Batuhan Erkan"),
+                        subtitle: Text("07.12.1999-24.08.2020"),
+                      );
+                    }),
+              ),
             )
           ],
         ),
